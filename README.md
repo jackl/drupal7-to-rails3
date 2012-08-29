@@ -5,8 +5,8 @@ Minimal project that can import some common Drupal 7 node types (story, page) an
 
 Assumes database being pointed to contains Drupal 7 content.
 
-== Setup
+## Setup
 
   * Edit database.yml and point towards your Drupal 7 database.
   * rails server
-  * Navigate to http://localhost:3000/stories 
+  * Navigate to [http://localhost:3000/stories](http://localhost:3000/stories) 
