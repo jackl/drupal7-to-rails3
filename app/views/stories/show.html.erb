@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<div>
+  <%= @story.title %>  
+</div
+<p>
+<%= @story.body_format %>  
+</p>
+<div>
+  <% if '2' == @story.body_format %>
+    <%= @story.body.html_safe %>
+  <% else %>
+    <%= textilize(@story.body) %>     
+  <% end %>
+</div>
+
+<div>
+  <h3>Comments</h3>
+  <ul>
+  <% @story.comments.each do |c| %>
+    <li>
+      <p>
+    <%= "#{c.cid}, #{c.pid}, #{c.nid}, #{c.created} => #{c.subject}"  %>
+      </p>
+      <p>
+        <% if '2' == c.body_format %>
+          <%= c.body.html_safe %>
+        <% else %>
+          <%= textilize(c.body) %>     
+        <% end %>      </p>
+    </li>
+  <% end %>
+  </ul>
+</div>
+<%= link_to 'Edit', edit_story_path(@story) %> |
+<%= link_to 'Back', stories_path %>
